@@ -1,7 +1,7 @@
 <script>
-  import LogoLinkedin24 from "carbon-icons-svelte/lib/LogoLinkedin24";
-  import LogoTwitter24 from "carbon-icons-svelte/lib/LogoTwitter24";
-  import LogoGithub24 from "carbon-icons-svelte/lib/LogoGithub24";
+  import LogoLinkedin24 from 'carbon-icons-svelte/lib/LogoLinkedin24';
+  import LogoTwitter24 from 'carbon-icons-svelte/lib/LogoTwitter24';
+  import LogoGithub24 from 'carbon-icons-svelte/lib/LogoGithub24';
   import Link from './_shared/Link.svelte';
   import LogoKeybase24 from '../public/LogoKeybase24.svg';
 </script>
@@ -28,12 +28,12 @@
         in
         <Link
           href="https://www.google.com/maps/search/?api=1&amp;aquery=Marcq-en-Barœul%2C%20France"
-          title="Marcq-en-Barœul on Google Map"
-        >
+          title="Marcq-en-Barœul on Google Map">
           Marcq-en-Barœul, France
         </Link>
       </p>
-      <p class="my-3">Co-founder of
+      <p class="my-3">
+        Co-founder of
         <Link href="https://github.com/Lille-Gophers" title="Lille Gophers GitHub Profile">Lille Gophers</Link>
       </p>
     </section>

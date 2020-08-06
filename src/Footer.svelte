@@ -1,6 +1,6 @@
 <script>
-  import Fork24 from "carbon-icons-svelte/lib/Fork24";
-  import Link from "./_shared/Link.svelte";
+  import Fork24 from 'carbon-icons-svelte/lib/Fork24';
+  import Link from './_shared/Link.svelte';
 
   const currentYear = new Date().getFullYear();
 </script>
@@ -10,9 +10,7 @@
     Made with 🍺 in
     <Link href="https://www.google.com/maps/search/?api=1&amp;query=Lille%2C%20France">Lille, France</Link>
     -
-    <span class="font-bold">
-    { currentYear }
-    </span>
+    <span class="font-bold">{currentYear}</span>
   </p>
   <div class="w-full md:w-auto flex justify-center">
     <Link href="https://github.com/Jerome1337/jeromepogeant.com" title="Fork me on Github">
