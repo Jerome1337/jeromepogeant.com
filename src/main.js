@@ -1,5 +1,5 @@
 import App from './index.svelte';
-import './main.pcss';
+import './Tailwind.svelte';
 
 const app = new App({
   target: document.body,

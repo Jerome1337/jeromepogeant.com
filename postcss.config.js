@@ -26,7 +26,7 @@ module.exports = {
     postcss_preset_env({
       stage: 0,
       autoprefixer: {
-        grid: true,
+        grid: false,
       },
     }),
     postcss_color_mod(),
@@ -36,7 +36,7 @@ module.exports = {
     }),
     production &&
       purgecss({
-        content: ['./src/*.html', './src/*.svelte'],
+        content: ['./**/*.html', './**/*.svelte'],
         defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
       }),
   ],
