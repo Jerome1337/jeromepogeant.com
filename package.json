@@ -47,7 +47,6 @@
     "sirv-cli": "^0.4.6",
     "svelte": "^3.24.0",
     "svelte-preprocess": "^3.9.12",
-    "svelte-preprocess-postcss": "^1.1.1",
     "tailwindcss": "^1.6.2",
     "tailwindcss-children": "^2.0.0"
   },

@@ -4,7 +4,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
-import svelte_preprocess_postcss from 'svelte-preprocess-postcss';
+import sveltePreprocess from 'svelte-preprocess';
 import svelteSVG from 'rollup-plugin-svelte-svg';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -23,11 +23,9 @@ export default {
     }),
     svelteSVG(),
     svelte({
+      preprocess: sveltePreprocess({ postcss: true }),
       dev: !production,
       emitCss: true,
-      preprocess: {
-        style: svelte_preprocess_postcss(),
-      },
       css: (css) => {
         css.write('public/build/bundle.css');
       },
