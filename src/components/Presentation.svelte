@@ -4,7 +4,7 @@
   import LogoTwitter24 from 'carbon-icons-svelte/lib/LogoTwitter24';
   import LogoGithub24 from 'carbon-icons-svelte/lib/LogoGithub24';
   import Link from './_shared/Link.svelte';
-  import LogoKeybase24 from '../public/LogoKeybase24.svg';
+  import LogoKeybase24 from '../../public/LogoKeybase24.svg';
 </script>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-24">

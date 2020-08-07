@@ -1,8 +1,8 @@
 <script>
   import { writable } from 'svelte/store';
   import { locale, locales } from 'svelte-i18n';
-  import FlagFR from '../public/images/flag-fr.svg';
-  import FlagGB from '../public/images/flag-gb.svg';
+  import FlagFR from '../../public/images/flag-fr.svg';
+  import FlagGB from '../../public/images/flag-gb.svg';
 
   const sortLocales = () => {
     const allLocales = [...[$locale], ...$locales];
