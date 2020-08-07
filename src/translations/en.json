@@ -1,0 +1,16 @@
+{
+  "currently": "Currently",
+  "full_stack_engineer": "Full Stack Engineer",
+  "full_stack_developer": "Full Stack Developer",
+  "in": "in",
+  "on": "on",
+  "co_founder_of": "Co-founder of",
+  "socials": "Socials:",
+  "made_with": "Made with",
+  "title": {
+    "profile": "{name} Profile"
+  },
+  "alt": {
+    "profile_picture": "Jérôme Profile Picture"
+  }
+}
