@@ -1,7 +1,7 @@
 module.exports = {
   theme: {
     extend: {
-      fill: (theme) => ({
+      fill: () => ({
         'current': 'currentColor',
         'gray-600': '#25282c',
         'gray-800': '#151618',
@@ -12,6 +12,8 @@ module.exports = {
       body: ['Roboto-Mono', 'monospace', 'sans-serif'],
     },
   },
-  variants: {},
+  variants: {
+    cursor: ['first'],
+  },
   plugins: [],
 };

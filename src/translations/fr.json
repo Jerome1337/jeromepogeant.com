@@ -1,0 +1,16 @@
+{
+  "currently": "Actuellement",
+  "full_stack_engineer": "Ingénieur Full Stack",
+  "full_stack_developer": "Développeur Full Stack",
+  "in": "à",
+  "on": "sur",
+  "co_founder_of": "Co-fondateur de",
+  "socials": "Réseaux sociaux :",
+  "made_with": "Créé avec",
+  "title": {
+    "profile": "Profil {name}"
+  },
+  "alt": {
+    "profile_picture": "Photo de Jérôme"
+  }
+}

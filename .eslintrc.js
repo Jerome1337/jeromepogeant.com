@@ -10,7 +10,7 @@ module.exports = {
   plugins: ['svelte3'],
   overrides: [
     {
-      files: ['**/*.svelte'],
+      files: ['*.svelte'],
       processor: 'svelte3/svelte3',
     },
   ],
@@ -22,5 +22,8 @@ module.exports = {
         devDependencies: true,
       },
     ],
+    'import/first': 'off',
+    'import/export': 'off',
+    'import/no-mutable-exports': 'off',
   },
 };
