@@ -30,4 +30,4 @@ jobs:
           script: |
             docker stop $(docker ps -a -q)
             docker pull jerome1337/jeromepogeant.com:latest
-            docker run --restart=always -p 80:80 jerome1337/jeromepogeant.com:latest
+            docker run -d --restart=always -p 80:80 jerome1337/jeromepogeant.com:latest
