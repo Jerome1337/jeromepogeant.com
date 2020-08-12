@@ -1,0 +1,33 @@
+name: Deployment
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    name: Deployment
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Push Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          repository: jerome1337/jeromepogeant.com
+          tags: latest
+          tag_with_ref: true
+          push: ${{ startsWith(github.ref, 'refs/tags/') }}
+      - name: Deploy on Digital Ocean
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DIGITALOCEAN_HOST }}
+          USERNAME: ${{ secrets.DIGITALOCEAN_USERNAME }}
+          KEY: ${{ secrets.SSH_KEY }}
+          script: |
+            docker stop $(docker ps -a -q)
+            docker pull jerome1337/jeromepogeant.com:latest
+            docker run --restart=always -p 80:80 jerome1337/jeromepogeant.com:latest
