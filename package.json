@@ -20,6 +20,7 @@
     "@rollup/plugin-node-resolve": "^7.1.3",
     "autoprefixer": "^9.8.6",
     "carbon-icons-svelte": "^10.14.1",
+    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -50,7 +51,8 @@
     "svelte-i18n": "^3.0.4",
     "svelte-preprocess": "^3.9.12",
     "tailwindcss": "^1.6.2",
-    "tailwindcss-children": "^2.0.0"
+    "tailwindcss-children": "^2.0.0",
+    "tailwindcss-plugins": "^0.3.0"
   },
   "dependencies": {},
   "husky": {

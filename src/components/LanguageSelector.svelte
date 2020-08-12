@@ -3,6 +3,7 @@
   import { locale, locales } from 'svelte-i18n';
   import FlagFR from '../../public/images/flag-fr.svg';
   import FlagGB from '../../public/images/flag-gb.svg';
+  import { isDarkTheme } from '../stores';
 
   const sortLocales = () => {
     const allLocales = [...[$locale], ...$locales];
@@ -28,7 +29,7 @@
 
 <style>
   div {
-    height: 36px;
+    height: 37px;
   }
 
   div:hover {
@@ -39,10 +40,13 @@
 
 <div
   id="localeSelector"
-  class="overflow-hidden rounded-lg border border-gray-600 px-2 hover:bg-gray-600 transition-all duration-200 z-10">
+  class="overflow-hidden rounded-lg border {$isDarkTheme ? 'border-gray hover:bg-gray' : 'border-brown hover:bg-brown'}
+  px-2 transition-all duration-200 z-10">
   <ul>
     {#each $orderedLocales as locale}
-      <li on:click="{toggleLanguage(locale)}" class="py-2 border-b border-gray-800 cursor-pointer first:cursor-default">
+      <li
+        on:click="{toggleLanguage(locale)}"
+        class="py-2 border-b border-{$isDarkTheme ? 'gray-dark' : 'brown-light'} cursor-pointer first:cursor-default">
         {#if locale === 'en-US'}
           <FlagGB height="20" class="rounded-full" />
         {:else}

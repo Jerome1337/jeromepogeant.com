@@ -6,8 +6,8 @@
   const currentYear = new Date().getFullYear();
 </script>
 
-<footer class="flex justify-between flex-wrap bg-gray-800 text-gray-600 p-6">
-  <p>
+<footer class="flex justify-between flex-wrap p-6">
+  <p class="w-full text-center pb-5 md:p-0 md:w-auto">
     {$t('made_with')} 🍺 {$t('in')}
     <Link
       href="https://www.google.com/maps/search/?api=1&amp;query=Lille%2C%20France"
