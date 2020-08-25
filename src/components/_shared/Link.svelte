@@ -9,6 +9,6 @@
   {href}
   target="_blank"
   {title}
-  class="font-bold hover:underline fill-current hover:text-{$isDarkTheme ? 'gold' : 'blue-dark'}">
+  class="font-bold hover:underline fill-current {$isDarkTheme ? 'hover:text-gold' : 'hover:text-blue-dark'}">
   <slot />
 </a>

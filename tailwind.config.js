@@ -1,6 +1,9 @@
 const gradients = require('tailwindcss-plugins/gradients');
 
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
   theme: {
     colors: {
       'white': '#ffffff',
