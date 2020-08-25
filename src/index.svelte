@@ -6,7 +6,7 @@
 </script>
 
 <main
-  class="h-screen flex flex-col justify-between bg-topaz {$isDarkTheme ? 'bg-gradient-dark text-gray' : 'bg-gradient-light text-brown'}">
+  class="h-screen flex flex-col justify-between font-body {$isDarkTheme ? 'bg-gradient-dark text-gray' : 'bg-gradient-light text-brown'}">
   <Header />
   <div class="container m-auto px-6">
     <Presentation />

@@ -27,17 +27,6 @@
   };
 </script>
 
-<style>
-  div {
-    height: 37px;
-  }
-
-  div:hover {
-    height: 72px;
-    border-radius: 1rem;
-  }
-</style>
-
 <div
   id="localeSelector"
   class="overflow-hidden rounded-lg border {$isDarkTheme ? 'border-gray hover:bg-gray' : 'border-brown hover:bg-brown'}
@@ -46,7 +35,7 @@
     {#each $orderedLocales as locale}
       <li
         on:click="{toggleLanguage(locale)}"
-        class="py-2 border-b border-{$isDarkTheme ? 'gray-dark' : 'brown-light'} cursor-pointer first:cursor-default">
+        class="py-2 border-b {$isDarkTheme ? 'border-gray-dark' : 'border-brown-light'} cursor-pointer first:cursor-default">
         {#if locale === 'en-US'}
           <FlagGB height="20" class="rounded-full" />
         {:else}
