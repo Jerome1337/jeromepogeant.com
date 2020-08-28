@@ -28,6 +28,7 @@ jobs:
           USERNAME: ${{ secrets.DIGITALOCEAN_USERNAME }}
           KEY: ${{ secrets.SSH_KEY }}
           script: |
-            docker stop $(docker ps -a -q)
-            docker pull jerome1337/jeromepogeant.com:latest
-            docker run -d --restart=always -p 80:80 jerome1337/jeromepogeant.com:latest
+            docker-compose stop jeromepogeant
+            docker-compose rm jeromepogeant
+            docker-compose pull
+            docker-compose up -d
