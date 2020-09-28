@@ -1,8 +1,7 @@
-const gradients = require('tailwindcss-plugins/gradients');
-
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
   theme: {
     colors: {
@@ -22,15 +21,10 @@ module.exports = {
       display: ['Roboto-Mono', 'monospace', 'sans-serif'],
       body: ['Roboto-Mono', 'monospace', 'sans-serif'],
     },
-    gradients: (theme) => ({
-      'gradient-dark': ['-30deg', theme('colors.blue-dark'), theme('colors.blue')],
-      'gradient-light': ['-30deg', theme('colors.yellow-dark'), theme('colors.yellow')],
-    }),
   },
   variants: {
     cursor: ['first'],
     outline: ['focus'],
     backgroundColor: ['hover'],
   },
-  plugins: [gradients],
 };
