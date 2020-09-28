@@ -4,6 +4,7 @@
   import LogoTwitter24 from 'carbon-icons-svelte/lib/LogoTwitter24';
   import LogoGithub24 from 'carbon-icons-svelte/lib/LogoGithub24';
   import LogoKeybase24 from 'carbon-icons-svelte/lib/LogoKeybase24';
+  import LogoMedium24 from 'carbon-icons-svelte/lib/LogoMedium24';
   import Link from './_shared/Link.svelte';
 </script>
 
@@ -65,6 +66,9 @@
       </Link>
       <Link href="https://keybase.io/jerome1337" title="{$t('title.profile', { values: { name: 'Keybase' } })}">
         <LogoKeybase24 />
+      </Link>
+      <Link href="https://medium.com/@jeromepogeant" title="{$t('title.profile', { values: { name: 'Medium' } })}">
+        <LogoMedium24 />
       </Link>
     </div>
   </section>
