@@ -1,7 +1,6 @@
 import { init, getLocaleFromNavigator } from 'svelte-i18n';
 import App from './index.svelte';
 import './components/Tailwind.svelte';
-import './main.pcss';
 import './i18n';
 
 const fallbackLocale = 'en-US';

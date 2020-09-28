@@ -27,8 +27,18 @@
   };
 </script>
 
+<style>
+  div {
+    height: 37px;
+  }
+
+  div:hover {
+    height: 72px;
+    border-radius: 1rem;
+  }
+</style>
+
 <div
-  id="localeSelector"
   class="overflow-hidden rounded-lg border {$isDarkTheme ? 'border-gray hover:bg-gray' : 'border-brown hover:bg-brown'}
   px-2 transition-all duration-200 z-10">
   <ul>

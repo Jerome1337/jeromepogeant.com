@@ -8,10 +8,10 @@
 
 <footer class="flex justify-between flex-wrap p-6">
   <p class="w-full text-center pb-5 md:p-0 md:w-auto">
-    {$t('made_with')} 🍺 {$t('in')}
-    <Link
-      href="https://www.google.com/maps/search/?api=1&amp;query=Lille%2C%20France"
-      title="Lille {$t('on')} Google Map">
+    {$t('made_with')}
+    🍺
+    {$t('in')}
+    <Link href="https://www.google.com/maps/search/?api=1&query=Lille%2C%20France" title="Lille {$t('on')} Google Map">
       Lille, France
     </Link>
     -

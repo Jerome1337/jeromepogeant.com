@@ -1,29 +1,35 @@
-import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
+import childProcess from 'child_process';
 import commonjs from '@rollup/plugin-commonjs';
+import imagemin from 'rollup-plugin-imagemin';
 import json from '@rollup/plugin-json';
 import livereload from 'rollup-plugin-livereload';
 import postcss from 'rollup-plugin-postcss';
-import { terser } from 'rollup-plugin-terser';
+import resolve from '@rollup/plugin-node-resolve';
+import svelte from 'rollup-plugin-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import svelteSVG from 'rollup-plugin-svelte-svg';
+import { terser } from 'rollup-plugin-terser';
 
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
-  let started = false;
+  let server;
+
+  function toExit() {
+    if (server) server.kill(0);
+  }
 
   return {
     writeBundle() {
-      if (!started) {
-        started = true;
+      if (server) return;
 
-        // eslint-disable-next-line global-require
-        require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
-          stdio: ['ignore', 'inherit', 'inherit'],
-          shell: true,
-        });
-      }
+      server = childProcess.spawn('npm', ['run', 'start', '--', '--dev'], {
+        stdio: ['ignore', 'inherit', 'inherit'],
+        shell: true,
+      });
+
+      process.on('SIGTERM', toExit);
+      process.on('exit', toExit);
     },
   };
 }
@@ -42,14 +48,18 @@ export default {
       extract: true,
     }),
     json(),
-    svelteSVG(),
     svelte({
       preprocess: sveltePreprocess({ postcss: true }),
       dev: !production,
-      emitCss: true,
       css: (css) => {
-        css.write('public/build/bundle.css');
+        css.write('bundle.css');
       },
+    }),
+    svelteSVG(),
+    imagemin({
+      include: '**/*.jpg',
+      fileName: '[name]-op[extname]',
+      publicPath: 'images',
     }),
     resolve({
       browser: true,
