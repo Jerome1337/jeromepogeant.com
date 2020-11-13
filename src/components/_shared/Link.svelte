@@ -6,9 +6,9 @@
 </script>
 
 <a
-  href="{href}"
+  {href}
   target="_blank"
-  title="{title}"
+  {title}
   rel="noreferrer"
   class="font-bold hover:underline fill-current {$isDarkTheme ? 'hover:text-gold' : 'hover:text-blue-dark'}">
   <slot />

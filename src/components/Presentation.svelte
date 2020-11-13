@@ -10,7 +10,7 @@
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-24">
   <section class="flex items-center justify-center">
-    <img src="profile_picture.jpg" alt="{$t('alt.profile_picture')}" class="h-48 md:h-64 rounded-full" />
+    <img src="profile_picture.jpg" alt={$t('alt.profile_picture')} class="h-48 md:h-64 rounded-full" />
   </section>
   <section class="flex flex-col justify-center">
     <h1 class="text-4xl">Jérôme Pogeant</h1>
@@ -19,7 +19,7 @@
       <p class="my-3">
         {$t('currently')}
         {$t('full_stack_engineer')}
-        <Link href="https://twitter.com/atos" title="{$t('title.profile', { values: { name: 'Atos Twitter' } })}">
+        <Link href="https://twitter.com/atos" title={$t('title.profile', { values: { name: 'Atos Twitter' } })}>
           @Atos
         </Link>
         {$t('in')}
@@ -32,7 +32,7 @@
       <p class="my-3">
         Ex
         {$t('full_stack_developer')}
-        <Link href="https://twitter.com/Nexylan" title="{$t('title.profile', { values: { name: 'Nexylan Twitter' } })}">
+        <Link href="https://twitter.com/Nexylan" title={$t('title.profile', { values: { name: 'Nexylan Twitter' } })}>
           @Nexylan
         </Link>
         {$t('in')}
@@ -46,7 +46,7 @@
         {$t('co_founder_of')}
         <Link
           href="https://github.com/Lille-Gophers"
-          title="{$t('title.profile', { values: { name: 'Lille Gophers GitHub' } })}">
+          title={$t('title.profile', { values: { name: 'Lille Gophers GitHub' } })}>
           Lille Gophers
         </Link>
       </p>
@@ -55,19 +55,19 @@
     <div class="flex flex-row gap-4">
       <Link
         href="https://www.linkedin.com/in/jeromepogeant/"
-        title="{$t('title.profile', { values: { name: 'LinkedIn' } })}">
+        title={$t('title.profile', { values: { name: 'LinkedIn' } })}>
         <LogoLinkedin24 />
       </Link>
-      <Link href="https://twitter.com/jeromepogeant" title="{$t('title.profile', { values: { name: 'Twitter' } })}">
+      <Link href="https://twitter.com/jeromepogeant" title={$t('title.profile', { values: { name: 'Twitter' } })}>
         <LogoTwitter24 />
       </Link>
-      <Link href="https://github.com/Jerome1337" title="{$t('title.profile', { values: { name: 'GitHub' } })}">
+      <Link href="https://github.com/Jerome1337" title={$t('title.profile', { values: { name: 'GitHub' } })}>
         <LogoGithub24 />
       </Link>
-      <Link href="https://keybase.io/jerome1337" title="{$t('title.profile', { values: { name: 'Keybase' } })}">
+      <Link href="https://keybase.io/jerome1337" title={$t('title.profile', { values: { name: 'Keybase' } })}>
         <LogoKeybase24 />
       </Link>
-      <Link href="https://medium.com/@jeromepogeant" title="{$t('title.profile', { values: { name: 'Medium' } })}">
+      <Link href="https://medium.com/@jeromepogeant" title={$t('title.profile', { values: { name: 'Medium' } })}>
         <LogoMedium24 />
       </Link>
     </div>
