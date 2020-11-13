@@ -12,7 +12,7 @@
   class="py-3 transition-all duration-200 z-10 mx-3 outline-none focus:outline-none"
   type="button"
   aria-label="Theme selector button"
-  on:click="{toggleTheme}">
+  on:click={toggleTheme}>
   {#if $isDarkTheme}
     <Moon24 class="fill-current text-white" />
   {:else}

@@ -44,7 +44,7 @@
   <ul>
     {#each $orderedLocales as locale}
       <li
-        on:click="{toggleLanguage(locale)}"
+        on:click={toggleLanguage(locale)}
         class="py-2 border-b {$isDarkTheme ? 'border-gray-dark' : 'border-brown-light'} cursor-pointer first:cursor-default">
         {#if locale === 'en-US'}
           <FlagGB height="20" class="rounded-full" />
