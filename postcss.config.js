@@ -1,4 +1,5 @@
-const cssnano = require('cssnano');
+// Wait for PostCSS 8 support (https://github.com/cssnano/cssnano/issues/952)
+// const cssnano = require('cssnano');
 const postcssColorMod = require('postcss-color-mod-function');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssImport = require('postcss-import');
@@ -30,12 +31,15 @@ module.exports = {
       autoprefixer: {
         grid: false,
       },
+      features: {
+        'focus-within-pseudo-class': false,
+      },
     }),
     postcssColorMod(),
-    cssnano({
-      autoprefixer: false,
-      preset: ['default'],
-    }),
+    // cssnano({
+    //   autoprefixer: false,
+    //   preset: ['default'],
+    // }),
     production &&
       purgecss({
         content: ['./**/*.html', './**/*.svelte'],
