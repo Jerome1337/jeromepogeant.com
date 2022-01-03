@@ -1,10 +1,10 @@
 import { init, getLocaleFromNavigator } from 'svelte-i18n';
-import App from './index.svelte';
+import App from './App.svelte';
 import './components/Tailwind.svelte';
 import './i18n';
 
 const fallbackLocale = 'en-US';
-const navigatorLocale = getLocaleFromNavigator();
+const navigatorLocale = getLocaleFromNavigator() || 'en-US';
 
 init({
   fallbackLocale,

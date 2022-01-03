@@ -1,5 +1,4 @@
-// Wait for PostCSS 8 support (https://github.com/cssnano/cssnano/issues/952)
-// const cssnano = require('cssnano');
+const cssnano = require('cssnano');
 const postcssColorMod = require('postcss-color-mod-function');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssImport = require('postcss-import');
@@ -7,6 +6,7 @@ const postcssUrl = require('postcss-url');
 const purgecss = require('@fullhuman/postcss-purgecss');
 const tailwindcss = require('tailwindcss');
 const postcssFontMagician = require('postcss-font-magician');
+const autoprefixer = require('autoprefixer');
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -23,6 +23,7 @@ module.exports = {
       foundries: 'google',
       protocol: 'https:',
     }),
+    autoprefixer(),
     postcssImport(),
     postcssUrl(),
     tailwindcss(),
@@ -36,10 +37,10 @@ module.exports = {
       },
     }),
     postcssColorMod(),
-    // cssnano({
-    //   autoprefixer: false,
-    //   preset: ['default'],
-    // }),
+    cssnano({
+      autoprefixer: false,
+      preset: ['default'],
+    }),
     production &&
       purgecss({
         content: ['./**/*.html', './**/*.svelte'],

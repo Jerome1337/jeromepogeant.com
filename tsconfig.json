@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "esnext",
+    "strict": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*"]
+}
