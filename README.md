@@ -14,7 +14,7 @@ $ npm install
 $ npm run dev
 ```
 
-Visit `localhost:5000`
+Visit `localhost:8080`
 
 Or with Docker Compose
 

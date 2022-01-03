@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { t } from 'svelte-i18n';
   import Fork24 from 'carbon-icons-svelte/lib/Fork24';
   import Link from './_shared/Link.svelte';

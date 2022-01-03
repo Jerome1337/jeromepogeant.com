@@ -1,6 +1,6 @@
 import childProcess from 'child_process';
 import commonjs from '@rollup/plugin-commonjs';
-import imagemin from 'rollup-plugin-imagemin';
+import { imagemin } from 'rollup-plugin-imagemin';
 import json from '@rollup/plugin-json';
 import livereload from 'rollup-plugin-livereload';
 import postcss from 'rollup-plugin-postcss';
@@ -9,6 +9,7 @@ import svelte from 'rollup-plugin-svelte';
 import sveltePreprocess from 'svelte-preprocess';
 import svelteSVG from 'rollup-plugin-svelte-svg';
 import { terser } from 'rollup-plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -35,24 +36,23 @@ function serve() {
 }
 
 export default {
-  input: 'src/main.js',
-  context: 'window',
+  input: 'src/main.ts',
   output: {
     sourcemap: true,
     format: 'iife',
-    name: 'app',
+    name: 'jeromepogeant.com',
     file: 'public/build/bundle.js',
   },
   plugins: [
     postcss({
       extract: true,
     }),
+    typescript({ sourceMap: !production, inlineSources: !production }),
     json(),
     svelte({
-      preprocess: sveltePreprocess({ postcss: true }),
-      dev: !production,
-      css: (css) => {
-        css.write('bundle.css');
+      preprocess: sveltePreprocess({ postcss: true, sourceMap: !production }),
+      compilerOptions: {
+        dev: !production,
       },
     }),
     svelteSVG(),
@@ -67,7 +67,7 @@ export default {
     }),
     commonjs(),
     !production && serve(),
-    !production && livereload('public'),
+    !production && livereload({ watch: 'public' }),
     production && terser(),
   ],
   watch: {

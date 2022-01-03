@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import { isDarkTheme } from '../../stores';
 
-  export let href;
-  export let title;
+  export let href: string;
+  export let title: string;
 </script>
 
 <a
@@ -10,6 +10,7 @@
   target="_blank"
   {title}
   rel="noreferrer"
-  class="font-bold hover:underline fill-current {$isDarkTheme ? 'hover:text-gold' : 'hover:text-blue-dark'}">
+  class="font-bold hover:underline fill-current {$isDarkTheme ? 'hover:text-blue' : 'hover:text-pink'}"
+>
   <slot />
 </a>
