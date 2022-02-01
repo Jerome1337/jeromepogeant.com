@@ -1,9 +1,10 @@
-<script>
-  import { t } from 'svelte-i18n';
+<script lang="ts">
   import Fork24 from 'carbon-icons-svelte/lib/Fork24';
+  import { t } from 'svelte-i18n';
+
   import Link from './_shared/Link.svelte';
 
-  const currentYear = new Date().getFullYear();
+  const currentYear: number = new Date().getFullYear();
 </script>
 
 <footer class="flex justify-between flex-wrap p-6">

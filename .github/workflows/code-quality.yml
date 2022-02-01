@@ -9,5 +9,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Check eslint
         run: |
-          npm i
+          npm ci
           npm run lint

@@ -1,4 +1,5 @@
 module.exports = {
+  content: ['./src/**/*.svelte'],
   theme: {
     colors: {
       'white': '#ffffff',

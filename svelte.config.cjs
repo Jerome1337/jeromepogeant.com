@@ -1,8 +1,8 @@
 module.exports = {
   preprocess: {
-    style: async ({ content, attributes }) => {
+    style: async ({ _, attributes }) => {
       if (attributes.type !== 'text/postcss') return;
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         resolve({ code: '', map: '' });
       });
     },
