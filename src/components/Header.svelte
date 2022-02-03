@@ -1,15 +1,9 @@
-<script>
-  import ThemeSelector from './ThemeSelector.svelte';
+<script lang="ts">
   import LanguageSelector from './LanguageSelector.svelte';
+  import ThemeSelector from './ThemeSelector.svelte';
 </script>
 
-<style>
-  header {
-    height: 84px;
-  }
-</style>
-
-<header class="flex justify-between items-start p-6">
+<header class="flex justify-between items-start p-6 h-[84px]">
   <ThemeSelector />
   <LanguageSelector />
 </header>

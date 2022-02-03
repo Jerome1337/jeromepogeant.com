@@ -10,5 +10,8 @@ indent_style = space
 [*.js]
 indent_size = 2
 
+[*.ts]
+indent_size = 2
+
 [*.svelte]
 indent_size = 2

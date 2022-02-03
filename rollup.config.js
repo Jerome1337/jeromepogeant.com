@@ -7,7 +7,8 @@ import postcss from 'rollup-plugin-postcss';
 import resolve from '@rollup/plugin-node-resolve';
 import svelte from 'rollup-plugin-svelte';
 import sveltePreprocess from 'svelte-preprocess';
-import svelteSVG from 'rollup-plugin-svelte-svg';
+import { svelteSVG } from 'rollup-plugin-svelte-svg';
+import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -35,7 +36,7 @@ function serve() {
 }
 
 export default {
-  input: 'src/main.js',
+  input: 'src/main.ts',
   context: 'window',
   output: {
     sourcemap: true,
@@ -45,27 +46,23 @@ export default {
   },
   plugins: [
     postcss({
-      extract: true,
+      extract: 'bundle.css',
     }),
     json(),
     svelte({
-      preprocess: sveltePreprocess({ postcss: true }),
-      dev: !production,
-      css: (css) => {
-        css.write('bundle.css');
-      },
+      preprocess: sveltePreprocess({ postcss: true, sourceMap: !production }),
+      emitCss: true,
     }),
-    svelteSVG(),
-    imagemin({
-      include: '**/*.jpg',
-      fileName: '[name]-op[extname]',
-      publicPath: 'images',
+    svelteSVG({
+      svgo: {},
     }),
+    imagemin(),
     resolve({
       browser: true,
       dedupe: ['svelte'],
     }),
     commonjs(),
+    typescript({ sourceMap: !production, inlineSources: !production }),
     !production && serve(),
     !production && livereload('public'),
     production && terser(),
