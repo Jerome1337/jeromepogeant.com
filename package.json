@@ -54,7 +54,7 @@
     "rollup-plugin-svelte-svg": "^1.0.0beta.6",
     "rollup-plugin-terser": "^7.0.2",
     "sirv-cli": "^2.0.2",
-    "svelte": "^3.46.3",
+    "svelte": "^3.49.0",
     "svelte-i18n": "^3.3.13",
     "svelte-preprocess": "^4.10.2",
     "tailwindcss": "^3.0.18",
